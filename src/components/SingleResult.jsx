@@ -59,7 +59,7 @@ const SingleResult = ({ result, singlePull, onBack }) => {
           className={`font-bold text-6xl${
             fourStars.characters.includes(result) ||
             fourStars.lightcones.includes(result)
-              ? 'font-bold text-purple-500'
+              ? 'font-bold text-6xl text-purple-500'
               : ''
           } ${fiveStars.includes(result) ? 'font-bold text-yellow-500' : ''}`}
         >

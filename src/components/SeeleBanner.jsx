@@ -344,7 +344,7 @@ const SeeleBanner = () => {
               </button>
               <div className="flex items-center justify-center gap-2 mb-3">
                 <img
-                  src="../public/assets/stellarjade_img.png"
+                  src="images/stellarjade_img.png"
                   className="w-[4rem] rounded-xl"
                 />
                 <h1>
@@ -356,18 +356,18 @@ const SeeleBanner = () => {
                 </h1>
               </div>
             </div>
-            <img src="../public/assets/banner_img.png" className="rounded-xl" />
+            <img src="images/banner_img.png" className="rounded-xl" />
             <button
               onClick={pullHandler}
               className="absolute md:bottom-1.5 bottom-0.5 right-[78px] lg:right-[225px] md:right-[170px] lg:w-[13rem] md:w-[9rem] w-[5rem]"
             >
-              <img src="../public/assets/warp_img.png" />
+              <img src="images/warp_img.png" />
             </button>
             <button
               onClick={tenPullHandler}
               className="absolute md:bottom-2 bottom-0.5 md:right-2.5 right-[0.5px] lg:w-[13rem] md:w-[9rem] w-[5rem]"
             >
-              <img src="../public/assets/warp10_img.png" />
+              <img src="images/warp10_img.png" />
             </button>
           </div>
         )}
