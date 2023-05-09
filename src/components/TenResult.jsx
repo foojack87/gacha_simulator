@@ -58,7 +58,7 @@ const TenResult = ({ result, TenPull, onBack }) => {
         {result.map((res, index) => (
           <div
             key={index}
-            className={`w-1/2 md:w-1/5 p-2 text-center text-4xl ${
+            className={`w-1/2 md:w-1/5 p-2 text-center sm:text-4xl ${
               fourStars.characters.includes(res) ||
               fourStars.lightcones.includes(res)
                 ? 'font-bold text-purple-500'

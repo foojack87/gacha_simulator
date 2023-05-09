@@ -310,6 +310,10 @@ const SeeleBanner = () => {
     setOpenRecordModal(true);
   };
 
+  const closeModalHandler = () => {
+    setOpenRecordModal(false);
+  };
+
   const restartHandler = () => {
     setFourStarCounter(0);
     setFiveStarCounter(0);
@@ -325,27 +329,72 @@ const SeeleBanner = () => {
 
   return (
     <>
-      {openRecordModal && <Modal />}
+      {openRecordModal && (
+        <Modal onClose={closeModalHandler}>
+          <div className="text-gray-600 flex flex-wrap max-h-80 overflow-auto">
+            {pullHistory.map((res, index) => (
+              <div
+                key={index}
+                className={`w-3/4 md:w-1/2 p-2 text-center border border-gray-400 text-sm ${
+                  possibleResults.fourStars.characters.includes(res) ||
+                  possibleResults.fourStars.lightcones.includes(res)
+                    ? 'font-bold text-purple-500'
+                    : ''
+                } ${
+                  possibleResults.fiveStars.includes(res)
+                    ? 'font-bold text-yellow-500'
+                    : ''
+                }`}
+              >
+                {pullHistory && (
+                  <div>
+                    {index + 1}. {res}
+                  </div>
+                )}
+              </div>
+            ))}
+            {pullHistory.length === 0 && (
+              <div className="text-gray-700 mx-auto font-bold p-6">
+                Start Pulling!
+              </div>
+            )}
+          </div>
+          <div className="flex items-center justify-center gap-6 p-3">
+            <button
+              onClick={closeModalHandler}
+              className="text-gray-600 shadow-xl px-4 rounded-xl"
+            >
+              Close
+            </button>
+            <button
+              onClick={restartHandler}
+              className="text-gray-600 shadow-xl px-4 rounded-xl"
+            >
+              Reset
+            </button>
+          </div>
+        </Modal>
+      )}
       <div>
         {!isPullingSingle && !isPullingTen && (
           <div className="relative">
             <div className="flex justify-between items-center">
               <button
                 onClick={restartHandler}
-                className="w-[8rem] h-[2rem] bg-white text-gray-600 rounded-xl font-bold"
+                className="sm:w-[8rem] sm:h-[2rem] py-1 px-2 text-sm bg-white text-gray-600 rounded-xl font-bold"
               >
                 Reset History
               </button>
               <button
                 onClick={openModalHandler}
-                className="w-[8rem] h-[2rem] bg-white text-gray-600 rounded-xl font-bold"
+                className="sm:w-[8rem] sm:h-[2rem] py-1 px-2 text-sm bg-white text-gray-600 rounded-xl font-bold"
               >
-                Record
+                History
               </button>
               <div className="flex items-center justify-center gap-2 mb-3">
                 <img
                   src="images/stellarjade_img.png"
-                  className="w-[4rem] rounded-xl"
+                  className="sm:w-[4rem] w-[2rem] rounded-xl"
                 />
                 <h1>
                   X
@@ -356,7 +405,7 @@ const SeeleBanner = () => {
                 </h1>
               </div>
             </div>
-            <img src="images/banner_img.png" className="rounded-xl" />
+            <img src="images/banner_cropped_img.png" className="rounded-xl" />
             <button
               onClick={pullHandler}
               className="absolute md:bottom-1.5 bottom-0.5 right-[78px] lg:right-[225px] md:right-[170px] lg:w-[13rem] md:w-[9rem] w-[5rem]"
