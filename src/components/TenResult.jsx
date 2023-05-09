@@ -54,7 +54,7 @@ const TenResult = ({ result, TenPull, onBack }) => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-wrap justify-between sm:h-[28rem]">
         {result.map((res, index) => (
           <>
             <div
@@ -70,15 +70,32 @@ const TenResult = ({ result, TenPull, onBack }) => {
                   : ''
               }`}
             >
-              <div className="flex items-center justify-center gap-4">
-                {res} {res.includes('Seele') && <img src="images/seele.png" />}
-                {res.includes('Welt') && <img src="images/welt.png" />}
-                {res.includes('Bronya') && <img src="images/bronya.png" />}
-                {res.includes('Himeko') && <img src="images/himeko.png" />}
-                {res.includes('Clara') && <img src="images/clara.png" />}
-                {res.includes('Gepard') && <img src="images/gepard.png" />}
-                {res.includes('Yanqing') && <img src="images/yanqing.png" />}
-                {res.includes('Bailu') && <img src="images/bailu.png" />}
+              <div className="flex flex-col items-center justify-center gap-4">
+                {res}{' '}
+                {res.includes('Seele') && (
+                  <img src="images/seele.png" className="sm:block hidden" />
+                )}
+                {res.includes('Welt') && (
+                  <img src="images/welt.png" className="sm:block hidden" />
+                )}
+                {res.includes('Bronya') && (
+                  <img src="images/bronya.png" className="sm:block hidden" />
+                )}
+                {res.includes('Himeko') && (
+                  <img src="images/himeko.png" className="sm:block hidden" />
+                )}
+                {res.includes('Clara') && (
+                  <img src="images/clara.png" className="sm:block hidden" />
+                )}
+                {res.includes('Gepard') && (
+                  <img src="images/gepard.png" className="sm:block hidden" />
+                )}
+                {res.includes('Yanqing') && (
+                  <img src="images/yanqing.png" className="sm:block hidden" />
+                )}
+                {res.includes('Bailu') && (
+                  <img src="images/bailu.png" className="sm:block hidden" />
+                )}
               </div>
             </div>
           </>
