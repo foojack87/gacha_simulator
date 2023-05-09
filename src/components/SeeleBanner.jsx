@@ -97,15 +97,11 @@ const SeeleBanner = () => {
 
   const drawResult = () => {
     let result;
-    console.log(isSeele);
 
     let fiveCounter = fiveStarCounter + 1;
     let fourCounter = fourStarCounter + 1;
-    console.log(fiveCounter);
-    console.log(fourCounter);
 
     const randNum = Math.random();
-    console.log(randNum);
 
     let fiveStarProbability = 0.006;
     const fourStarProbability = 0.051;
@@ -113,8 +109,6 @@ const SeeleBanner = () => {
     if (fiveCounter >= 74) {
       fiveStarProbability = (fiveCounter - 73) * 0.06;
     }
-
-    console.log(fiveStarProbability);
 
     if (
       randNum < fiveStarProbability ||
@@ -125,7 +119,6 @@ const SeeleBanner = () => {
 
       if (!isSeele) {
         const seeleRandom = Math.random() < 0.5;
-        console.log(seeleRandom);
 
         result =
           possibleResults.fiveStars[
@@ -200,11 +193,8 @@ const SeeleBanner = () => {
 
       fiveCounter++;
       fourCounter++;
-      console.log(fiveCounter);
-      console.log(fourCounter);
 
       const randNum = Math.random();
-      console.log(randNum);
 
       let fiveStarProbability = 0.006;
       const fourStarProbability = 0.051;
@@ -212,8 +202,6 @@ const SeeleBanner = () => {
       if (fiveCounter >= 74) {
         fiveStarProbability = (fiveCounter - 73) * 0.06;
       }
-
-      console.log(fiveStarProbability);
 
       if (
         randNum < fiveStarProbability ||
@@ -224,7 +212,6 @@ const SeeleBanner = () => {
 
         if (!isSeele) {
           const seeleRandom = Math.random() < 0.5;
-          console.log(seeleRandom);
 
           result =
             possibleResults.fiveStars[
@@ -280,19 +267,15 @@ const SeeleBanner = () => {
           ];
       }
 
-      console.log(result);
       results.push(result);
     }
 
-    console.log(results);
     setFiveStarCounter(fiveCounter);
     setFourStarCounter(fourCounter);
     const newPullHistory = [...pullHistory, ...results];
     setPullResult(results);
     setPullHistory(newPullHistory);
   };
-
-  console.log(pullHistory);
 
   const tenPullHandler = () => {
     drawTenResult();
@@ -301,7 +284,6 @@ const SeeleBanner = () => {
 
   const pullHandler = () => {
     const pullResult = drawResult();
-    console.log(pullResult);
     setPullResult(pullResult);
     setIsPullingSingle(true);
   };
