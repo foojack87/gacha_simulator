@@ -55,16 +55,30 @@ const SingleResult = ({ result, singlePull, onBack }) => {
   return (
     <>
       <div className="p-6 flex flex-col gap-4 items-center">
-        {result === 'Seele' && <img src="images/seele.png" />}
-        {result === 'Welt' && <img src="images/welt.png" />}
-        {result === 'Bronya' && (
-          <img src="images/bronya.png " className="w-[6rem]" />
+        {result === 'Seele' && (
+          <img src="images/seele.png" className="w-[6rem]" />
         )}
-        {result === 'Himeko' && <img src="images/himeko.png" />}
-        {result === 'Clara' && <img src="images/clara.png" />}
-        {result === 'Gepard' && <img src="images/gepard.png" />}
-        {result === 'Yanqing' && <img src="images/yanqing.png" />}
-        {result === 'Bailu' && <img src="images/bailu.png" />}
+        {result === 'Welt' && (
+          <img src="images/welt.png" className="w-[6rem]" />
+        )}
+        {result === 'Bronya' && (
+          <img src="images/bronya.png" className="w-[6rem]" />
+        )}
+        {result === 'Himeko' && (
+          <img src="images/himeko.png" className="w-[6rem]" />
+        )}
+        {result === 'Clara' && (
+          <img src="images/clara.png" className="w-[6rem]" />
+        )}
+        {result === 'Gepard' && (
+          <img src="images/gepard.png" className="w-[6rem]" />
+        )}
+        {result === 'Yanqing' && (
+          <img src="images/yanqing.png" className="w-[6rem]" />
+        )}
+        {result === 'Bailu' && (
+          <img src="images/bailu.png" className="w-[6rem]" />
+        )}
         <span
           className={`font-bold ease-in duration-300 text-6xl${
             fourStars.characters.includes(result) ||
