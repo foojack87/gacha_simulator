@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import SingleResult from './SingleResult';
 import TenResult from './TenResult';
 import Modal from '../layout/Modal';

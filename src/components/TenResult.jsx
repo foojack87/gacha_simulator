@@ -56,17 +56,32 @@ const TenResult = ({ result, TenPull, onBack }) => {
     <>
       <div className="flex flex-wrap justify-between">
         {result.map((res, index) => (
-          <div
-            key={index}
-            className={`w-1/2 md:w-1/5 p-2 text-center sm:text-4xl ${
-              fourStars.characters.includes(res) ||
-              fourStars.lightcones.includes(res)
-                ? 'font-bold text-purple-500'
-                : ''
-            } ${fiveStars.includes(res) ? 'font-bold text-yellow-500' : ''}`}
-          >
-            {res}
-          </div>
+          <>
+            <div
+              key={index}
+              className={`w-1/2 md:w-1/5 p-2 text-center sm:text-4xl ${
+                fourStars.characters.includes(res) ||
+                fourStars.lightcones.includes(res)
+                  ? 'font-bold text-purple-500 animate-pulse'
+                  : ''
+              } ${
+                fiveStars.includes(res)
+                  ? 'font-bold text-yellow-500 animate-pulse'
+                  : ''
+              }`}
+            >
+              <div className="flex items-center justify-center gap-4">
+                {res} {res.includes('Seele') && <img src="images/seele.png" />}
+                {res.includes('Welt') && <img src="images/welt.png" />}
+                {res.includes('Bronya') && <img src="images/bronya.png" />}
+                {res.includes('Himeko') && <img src="images/himeko.png" />}
+                {res.includes('Clara') && <img src="images/clara.png" />}
+                {res.includes('Gepard') && <img src="images/gepard.png" />}
+                {res.includes('Yanqing') && <img src="images/yanqing.png" />}
+                {res.includes('Bailu') && <img src="images/bailu.png" />}
+              </div>
+            </div>
+          </>
         ))}
       </div>
       <div className="flex items-center justify-center gap-6 mt-6">

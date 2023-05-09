@@ -54,14 +54,28 @@ const SingleResult = ({ result, singlePull, onBack }) => {
 
   return (
     <>
-      <div className="p-6">
+      <div className="p-6 flex flex-col gap-4 items-center">
+        {result === 'Seele' && <img src="images/seele.png" />}
+        {result === 'Welt' && <img src="images/welt.png" />}
+        {result === 'Bronya' && (
+          <img src="images/bronya.png " className="w-[6rem]" />
+        )}
+        {result === 'Himeko' && <img src="images/himeko.png" />}
+        {result === 'Clara' && <img src="images/clara.png" />}
+        {result === 'Gepard' && <img src="images/gepard.png" />}
+        {result === 'Yanqing' && <img src="images/yanqing.png" />}
+        {result === 'Bailu' && <img src="images/bailu.png" />}
         <span
-          className={`font-bold text-6xl${
+          className={`font-bold ease-in duration-300 text-6xl${
             fourStars.characters.includes(result) ||
             fourStars.lightcones.includes(result)
-              ? 'font-bold text-6xl text-purple-500'
+              ? 'font-bold text-6xl text-purple-500 animate-pulse'
               : ''
-          } ${fiveStars.includes(result) ? 'font-bold text-yellow-500' : ''}`}
+          } ${
+            fiveStars.includes(result)
+              ? 'font-bold text-yellow-500 animate-pulse'
+              : ''
+          }`}
         >
           {result}
         </span>
