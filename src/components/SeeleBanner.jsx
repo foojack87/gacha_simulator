@@ -331,7 +331,7 @@ const SeeleBanner = () => {
     <>
       {openRecordModal && (
         <Modal onClose={closeModalHandler}>
-          <div className="text-gray-600 flex flex-wrap max-h-80 overflow-auto">
+          <div className="text-gray-600 flex flex-wrap max-h-80 overflow-auto items-center justify-center">
             {pullHistory.map((res, index) => (
               <div
                 key={index}
