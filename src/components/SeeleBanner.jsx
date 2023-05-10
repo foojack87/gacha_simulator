@@ -13,6 +13,7 @@ const SeeleBanner = () => {
   const [isPullingSingle, setIsPullingSingle] = useState(false);
   const [isPullingTen, setIsPullingTen] = useState(false);
   const [openRecordModal, setOpenRecordModal] = useState(false);
+  const [isBannerLoaded, setIsBannerLoaded] = useState(false);
 
   const possibleResults = {
     // 0.6% chance of drawing something from the fiveStars array. If drawed fiveStars array, 50% chance result is 'Seele', every 90 draws will result in a fiveStars. Starting from 74th draw each draw will increase the chance of drawing from the fiveStars array by 6%. If the previous fiveStars was not 'Seele', then the next fiveStar is 100% to be 'Seele'. Whenever a result is drawn from the fiveStars array, counter resets to 0.
@@ -309,6 +310,10 @@ const SeeleBanner = () => {
     setIsPullingTen(false);
   };
 
+  const bannerImg = new Image();
+  bannerImg.onload = () => setIsBannerLoaded(true);
+  bannerImg.src = 'images/banner_cropped_img.png';
+
   return (
     <>
       {openRecordModal && (
@@ -358,7 +363,7 @@ const SeeleBanner = () => {
         </Modal>
       )}
       <div>
-        {!isPullingSingle && !isPullingTen && (
+        {!isPullingSingle && !isPullingTen && isBannerLoaded && (
           <div className="relative">
             <div className="flex justify-between items-center">
               <button
